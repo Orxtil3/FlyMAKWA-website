@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Airline Flight Search</title>
+  <style>
+    body {
+      font-family: "Arial", sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+
+    main {
+      padding: 20px;
+    }
+
+    section {
+      margin-bottom: 40px;
+      background-color: #fff;
+      border-radius: 4px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+    }
+
+    h2 {
+      margin: 0 0 20px 0;
+      font-size: 24px;
+    }
+
+    form {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    input[type="text"],
+    input[type="date"],
+    select {
+      width: 100%;
+      padding: 10px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+      margin-bottom: 15px;
+    }
+
+    button {
+      background-color: #333;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #555;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Airline Flight Search</h1>
+  </header>
+
+  <main>
+    <section id="flight-search">
+      <h2>Flight Search</h2>
+      <form id="search-form">
+        <label for="departure-city">Departure City:</label>
+        <input type="text" id="departure-city" name="departure-city" required>
+
+        <label for="departure-date">Departure Date:</label>
+        <input type="date" id="departure-date" name="departure-date" required>
+
+        <label for="return-city">Return City:</label>
+        <input type="text" id="return-city" name="return-city" required>
+
+        <label for="return-date">Return Date:</label>
+        <input type="date" id="return-date" name="return-date" required>
+
+        <label for="cabin-class">Cabin Class:</label>
+        <select id="cabin-class" name="cabin-class">
+          <option value="economy">Economy</option>
+          <option value="business">Business</option>
+          <option value="first">First Class</option>
+        </select>
+
+        <label for="price">Price Limit:</label>
+        <input type="text" id="price" name="price">
+
+        <button type="submit">Search</button>
+      </form>
+    </section>
+
+    <section id="flight-results">
+      <h2>Flight Results</h2>
+      <div id="results-container">
+        <!-- The fetched flight results will be displayed here -->
+      </div>
+    </section>
+  </main>
+
+  <script>
+    document.getElementById("search-form").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      // Retrieve form values
+      var departureCity = document.getElementById("departure-city").value;
+      var departureDate = document.getElementById("departure-date").value;
+      var returnCity = document.getElementById("return-city").value;
+      var returnDate = document.getElementById("return-date").value;
+      var cabinClass = document.getElementById("cabin-class").value;
+      var price = document.getElementById("price").value;
+  });
+  </script>
+</body>
+</html>
